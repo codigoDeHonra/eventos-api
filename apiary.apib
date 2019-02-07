@@ -1,80 +1,267 @@
 FORMAT: 1A
 HOST: http://polls.apiblueprint.org/
 
-# eventos-api
+# Eventos API
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+API de eventos
 
-## Questions Collection [/questions]
+## Evento [/eventos]
 
-### List All Questions [GET]
+### Listar os eventos [GET]
+
+Listar os eventos
 
 + Response 200 (application/json)
 
         [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
+                "nome": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z"
             }
         ]
 
-### Create a New Question [POST]
+### Criar novo evento [POST]
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+Criar um novo evento
 
 + Request (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "nome": "Favourite programming language?",
+            "data": "2015-08-05T08:40:51.620Z"
         }
 
 + Response 201 (application/json)
 
     + Headers
 
-            Location: /questions/2
+            Location: /evento/1
 
     + Body
 
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+                "nome": "Favourite programming language?",
+                "data": "2015-08-05T08:40:51.620Z"
+            }
+            
+### Atualizar um evento [PUT]
+
+Atualizar um evento
+
++ Request (application/json)
+
+        {
+            "nome": "Favourite programming language?",
+            "data": "2015-08-05T08:40:51.620Z"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /evento/1
+
+    + Body
+
+            {
+                "nome": "Favourite programming language?",
+                "data": "2015-08-05T08:40:51.620Z"
+            }
+            
+### Excluir um evento [DELETE]
+
+Excluir um evento
+
++ Request (application/json)
+
+        {
+            "nome": "Favourite programming language?",
+            "data": "2015-08-05T08:40:51.620Z"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /evento/1
+
+    + Body
+
+            {
+                "id": "Favourite programming language?",
+                "nome": "evento 1"
+            }
+
+## Inscrição [/inscricao]
+
+### Listar os inscrições [GET]
+
+Listar os Inscrições
+
++ Response 200 (application/json)
+
+        [
+            {
+                "nome": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z"
+            }
+        ]
+
+### Criar nova inscrição [POST]
+
+Criar um novo inscrição
+
++ Request (application/json)
+
+        {
+            "nome": "Favourite programming language?",
+            "data": "2015-08-05T08:40:51.620Z"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /evento/1
+
+    + Body
+
+            {
+                "nome": "Favourite programming language?",
+                "data": "2015-08-05T08:40:51.620Z"
+            }
+            
+### Atualizar um inscrição [PUT]
+
+Atualizar um evento
+
++ Request (application/json)
+
+        {
+            "nome": "Favourite programming language?",
+            "data": "2015-08-05T08:40:51.620Z"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /evento/1
+
+    + Body
+
+            {
+                "nome": "Favourite programming language?",
+                "data": "2015-08-05T08:40:51.620Z"
+            }
+            
+### Excluir um inscrição [DELETE]
+
+Excluir um evento
+
++ Request (application/json)
+
+        {
+            "nome": "Favourite programming language?",
+            "data": "2015-08-05T08:40:51.620Z"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /evento/1
+
+    + Body
+
+            {
+                "id": "Favourite programming language?",
+                "nome": "evento 1"
+            }
+            
+## Usuário [/usuario]
+
+### Listar os usuario [GET]
+
+Listar os usuario
+
++ Response 200 (application/json)
+
+        [
+            {
+                "nome": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z"
+            }
+        ]
+
+### Criar nova usuario [POST]
+
+Criar um novo usuario
+
++ Request (application/json)
+
+        {
+            "nome": "Favourite programming language?",
+            "data": "2015-08-05T08:40:51.620Z"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /evento/1
+
+    + Body
+
+            {
+                "nome": "Favourite programming language?",
+                "data": "2015-08-05T08:40:51.620Z"
+            }
+            
+### Atualizar um usuario [PUT]
+
+Atualizar um usuario
+
++ Request (application/json)
+
+        {
+            "nome": "Favourite programming language?",
+            "data": "2015-08-05T08:40:51.620Z"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /evento/1
+
+    + Body
+
+            {
+                "nome": "Favourite programming language?",
+                "data": "2015-08-05T08:40:51.620Z"
+            }
+            
+### Excluir um usuario [DELETE]
+
+Excluir um usuario
+
++ Request (application/json)
+
+        {
+            "nome": "Favourite programming language?",
+            "data": "2015-08-05T08:40:51.620Z"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /evento/1
+
+    + Body
+
+            {
+                "id": "Favourite programming language?",
+                "nome": "evento 1"
             }
